@@ -1,0 +1,968 @@
+ERROR - 2024-05-17 11:28:56 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'Shop', 3306, '', 0)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+#6 C:\xampp\htdocs\Shop\app\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+#9 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+#5 C:\xampp\htdocs\Shop\app\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+#6 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2024-05-17 11:28:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `produits`
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+ERROR - 2024-05-17 11:34:28 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'Shop', 3306, '', 0)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+#6 C:\xampp\htdocs\Shop\app\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+#9 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+#5 C:\xampp\htdocs\Shop\app\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+#6 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2024-05-17 11:34:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `produits`
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 11:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 11:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 11:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 11:51:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 11:51:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 11:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 11:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 11:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 11:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:13:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:13:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:32:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:33:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 12:33:28 --> Error: Class "Stripe\Stripe" not found
+[Method: GET, Route: checkout]
+in APPPATH\Controllers\PaymentController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\PaymentController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 13:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-17 14:13:35 --> mysqli_sql_exception: Unknown column 'adresse' in 'field list' in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 C:\xampp\htdocs\Shop\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\Shop\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\Shop\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\Shop\app\Controllers\PanierController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+#9 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+#10 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-05-17 14:13:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'adresse' in 'field list'
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `panier` (`user_id`, `produit_id`, `quantite`, `adresse`, `ville`, `code_postal`, `pays`) VALUES (:user_id:, :produit_id:, :quantite:, :adresse:, :ville:, :code_postal:, :pays:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\PanierController.php(66): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 14:13:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'adresse' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `panier` (`user_id`, `produit_id`, `quantite`, `adresse`, `ville`, `code_postal`, `pays`) VALUES (\'9\', 12, \'1\', \'Makiso, 5e saio, Q. des musiciens N04\', \'Kisangani\', \'20010\', \'RDC\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `panier` (`user_id`, `produit_id`, `quantite`, `adresse`, `ville`, `code_postal`, `pays`) VALUES (\'9\', 12, \'1\', \'Makiso, 5e saio, Q. des musiciens N04\', \'Kisangani\', \'20010\', \'RDC\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `panier` (`user_id`, `produit_id`, `quantite`, `adresse`, `ville`, `code_postal`, `pays`) VALUES (:user_id:, :produit_id:, :quantite:, :adresse:, :ville:, :code_postal:, :pays:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\PanierController.php(66): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 14:13:36 --> [Caused by] mysqli_sql_exception: Unknown column 'adresse' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `panier` (`user_id`, `produit_id`, `quantite`, `adresse`, `ville`, `code_postal`, `pays`) VALUES (\'9\', 12, \'1\', \'Makiso, 5e saio, Q. des musiciens N04\', \'Kisangani\', \'20010\', \'RDC\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `panier` (`user_id`, `produit_id`, `quantite`, `adresse`, `ville`, `code_postal`, `pays`) VALUES (\'9\', 12, \'1\', \'Makiso, 5e saio, Q. des musiciens N04\', \'Kisangani\', \'20010\', \'RDC\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `panier` (`user_id`, `produit_id`, `quantite`, `adresse`, `ville`, `code_postal`, `pays`) VALUES (\'9\', 12, \'1\', \'Makiso, 5e saio, Q. des musiciens N04\', \'Kisangani\', \'20010\', \'RDC\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `panier` (`user_id`, `produit_id`, `quantite`, `adresse`, `ville`, `code_postal`, `pays`) VALUES (:user_id:, :produit_id:, :quantite:, :adresse:, :ville:, :code_postal:, :pays:)', [...], false)
+ 5 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\PanierController.php(66): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 14:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:35:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 14:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-17 15:06:01 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'Shop', 3306, '', 0)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Shop\app\Controllers\Article.php(11): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Article->article()
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+#9 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\Shop\app\Controllers\Article.php(11): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Article->article()
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2024-05-17 15:06:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: GET, Route: Article]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `produits`', [], false)
+ 3 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Article.php(11): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->article()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+ERROR - 2024-05-17 15:14:19 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=13176 in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 186)
+#1 C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'Shop', 3306, '', 0)
+#2 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+#7 C:\xampp\htdocs\Shop\app\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+#9 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+#10 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'Shop', 3306, '', 0)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+#6 C:\xampp\htdocs\Shop\app\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+#9 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\Shop\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\Shop\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+#5 C:\xampp\htdocs\Shop\app\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+#6 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-05-17 15:14:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `produits`
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Acceuil.php(12): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Acceuil->main()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Acceuil))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-17 15:22:51 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 81.
+ 1 APPPATH\Controllers\PanierController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 81)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 17:24:51 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 81.
+ 1 APPPATH\Controllers\PanierController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 81)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+ERROR - 2024-05-17 17:26:09 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'Shop', 3306, '', 0)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Shop\system\Model.php(207): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Shop\system\BaseModel.php(610): CodeIgniter\Model->doFind(true, '13')
+#6 C:\xampp\htdocs\Shop\app\Controllers\PanierController.php(24): CodeIgniter\BaseModel->find('13')
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\PanierController->ajouter_au_panier()
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+#9 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\Shop\system\Model.php(207): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\Shop\system\BaseModel.php(610): CodeIgniter\Model->doFind(true, '13')
+#5 C:\xampp\htdocs\Shop\app\Controllers\PanierController.php(24): CodeIgniter\BaseModel->find('13')
+#6 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\PanierController->ajouter_au_panier()
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2024-05-17 17:26:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: POST, Route: ajouter_au_panier]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `produits`
+WHERE `produits`.`id_produit` = :produits.id_produit:', [...], false)
+ 3 SYSTEMPATH\Model.php(207): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, '13')
+ 5 APPPATH\Controllers\PanierController.php(24): CodeIgniter\BaseModel->find('13')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->ajouter_au_panier()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+ERROR - 2024-05-17 17:26:18 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'Shop', 3306, '', 0)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Shop\system\Model.php(207): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Shop\system\BaseModel.php(610): CodeIgniter\Model->doFind(true, '13')
+#6 C:\xampp\htdocs\Shop\app\Controllers\Boutique.php(19): CodeIgniter\BaseModel->find('13')
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Boutique->boutique()
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Boutique))
+#9 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\xampp\htdocs\Shop\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\Shop\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\Shop\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\Shop\system\Model.php(207): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\Shop\system\BaseModel.php(610): CodeIgniter\Model->doFind(true, '13')
+#5 C:\xampp\htdocs\Shop\app\Controllers\Boutique.php(19): CodeIgniter\BaseModel->find('13')
+#6 C:\xampp\htdocs\Shop\system\CodeIgniter.php(933): App\Controllers\Boutique->boutique()
+#7 C:\xampp\htdocs\Shop\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Boutique))
+#8 C:\xampp\htdocs\Shop\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Shop\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Shop\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Shop\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\Shop\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2024-05-17 17:26:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: GET, Route: Boutique]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `produits`
+WHERE `produits`.`id_produit` = :produits.id_produit:', [...], false)
+ 3 SYSTEMPATH\Model.php(207): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, '13')
+ 5 APPPATH\Controllers\Boutique.php(19): CodeIgniter\BaseModel->find('13')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Boutique->boutique()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Boutique))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 17:26:55 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 81.
+ 1 APPPATH\Controllers\PanierController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 81)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 17:37:21 --> ErrorException: Undefined variable $designation
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 71.
+ 1 APPPATH\Controllers\PanierController.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $designation', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 17:37:48 --> ErrorException: Undefined variable $designation
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 71.
+ 1 APPPATH\Controllers\PanierController.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $designation', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 17:46:42 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 82.
+ 1 APPPATH\Controllers\PanierController.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 82)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 17:50:53 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 85.
+ 1 APPPATH\Controllers\PanierController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 17:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 17:53:07 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 85.
+ 1 APPPATH\Controllers\PanierController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 17:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:53:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:53:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 17:54:07 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 85.
+ 1 APPPATH\Controllers\PanierController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 17:54:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 17:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 17:55:25 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PanierController.php(93): CodeIgniter\Model->update(18, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 18:01:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 18:02:24 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 85.
+ 1 APPPATH\Controllers\PanierController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+CRITICAL - 2024-05-17 18:05:53 --> ParseError: Unmatched '}'
+[Method: GET, Route: panier_view]
+in APPPATH\Controllers\PanierController.php on line 130.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PanierController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PanierController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\PanierController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 18:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 18:06:08 --> ParseError: Unmatched '}'
+[Method: POST, Route: ajouter_au_panier]
+in APPPATH\Controllers\PanierController.php on line 130.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PanierController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PanierController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\PanierController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 18:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:06:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-17 18:06:32 --> Erreur lors de l'insertion de la commande ou de la mise à jour du produit : Undefined array key "quantite"
+INFO - 2024-05-17 18:06:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-17 18:07:06 --> Erreur lors de l'insertion de la commande ou de la mise à jour du produit : Undefined array key "quantite"
+INFO - 2024-05-17 18:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 18:08:03 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 85.
+ 1 APPPATH\Controllers\PanierController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 18:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-05-17 18:09:35 --> Détails du produit: Array
+(
+    [designation] => Google pixel 7 pro
+    [prix] => 420
+    [quantite] => 1
+)
+
+ERROR - 2024-05-17 18:09:35 --> Erreur lors de l'insertion de la commande ou de la mise à jour du produit : Undefined array key "quantite"
+INFO - 2024-05-17 18:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-05-17 18:09:42 --> Détails du produit: Array
+(
+    [designation] => Google pixel 7 pro
+    [prix] => 420
+    [quantite] => 1
+)
+
+ERROR - 2024-05-17 18:09:42 --> Erreur lors de l'insertion de la commande ou de la mise à jour du produit : Undefined array key "quantite"
+INFO - 2024-05-17 18:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-05-17 18:10:29 --> Détails du produit: Array
+(
+    [designation] => Google pixel 7 pro
+    [prix] => 420
+    [quantite] => 1
+)
+
+ERROR - 2024-05-17 18:10:29 --> Erreur lors de l'insertion de la commande ou de la mise à jour du produit : Undefined array key "quantite"
+INFO - 2024-05-17 18:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-05-17 18:11:20 --> Détails du produit: Array
+(
+    [designation] => Iphone 11
+    [prix] => 350
+    [quantite] => 10
+)
+
+ERROR - 2024-05-17 18:11:20 --> Erreur lors de l'insertion de la commande ou de la mise à jour du produit : Undefined array key "quantite"
+INFO - 2024-05-17 18:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-05-17 18:12:40 --> Détails du produit: Array
+(
+    [designation] => Iphone 11
+    [prix] => 350
+    [quantite] => 10
+)
+
+ERROR - 2024-05-17 18:12:40 --> Erreur lors de l'insertion de la commande ou de la mise à jour du produit : Undefined array key "quantite"
+INFO - 2024-05-17 18:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:50:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 18:51:37 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 85.
+ 1 APPPATH\Controllers\PanierController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 18:52:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 18:52:01 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PanierController.php(93): CodeIgniter\Model->update(12, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 18:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:55:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:55:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 18:56:00 --> ErrorException: Undefined array key "quantite"
+[Method: POST, Route: PanierController/proceder_au_paiement]
+in APPPATH\Controllers\PanierController.php on line 90.
+ 1 APPPATH\Controllers\PanierController.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "quantite"', 'C:\\xampp\\htdocs\\Shop\\app\\Controllers\\PanierController.php', 90)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->proceder_au_paiement()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 18:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 18:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:02:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:05:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:06:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:09:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:14:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 19:14:03 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+[Method: GET, Route: panier_view]
+in APPPATH\Views\panier_view.php on line 164.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('panier_view', [], true)
+ 3 APPPATH\Controllers\PanierController.php(14): view('panier_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->panier_view()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 19:15:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:17:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:18:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:19:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:24:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:24:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:25:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:26:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:40:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 20:52:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 21:05:18 --> ErrorException: Undefined variable $pan
+[Method: GET, Route: Pan]
+in APPPATH\Views\panier_dashboard.php on line 38.
+ 1 APPPATH\Views\panier_dashboard.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pan', 'C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_dashboard.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('panier_dashboard', [], true)
+ 5 APPPATH\Controllers\Pan.php(12): view('panier_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pan->panier_dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pan))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-17 21:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:36:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:36:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:41:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:42:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:44:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 21:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
