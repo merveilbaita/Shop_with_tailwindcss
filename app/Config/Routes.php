@@ -46,6 +46,8 @@ $routes->get('panier', 'PanierController::afficher_panier');
 $routes->post('panier/update_quantity', 'PanierController::update_quantity');
 $routes->post('panier/remove_article', 'PanierController::remove_article');
 $routes->get('panier/afficher', 'PanierController::afficher_panier');
+$routes->get('Article/article/(:any)', 'Article::article/$1');
+$routes->get('Article/article', 'Article::article');
 
 
 

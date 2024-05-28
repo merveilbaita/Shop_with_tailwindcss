@@ -42,4 +42,16 @@ class ProduitModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    // Methode de recuperation des produits par catégorie
+    public function getProduitsByCategorie($categorie)
+    {
+        return $this->where('categories', $categorie)->findAll();
+    }
+
+    // Methode pour recuperer tous le categories
+    public function getCategories()
+    {
+        return $this->select('categories')->distinct()->findAll();
+    }
 }
