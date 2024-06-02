@@ -1,0 +1,87 @@
+INFO - 2024-05-31 14:44:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:44:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 14:58:44 --> ErrorException: Undefined array key "img"
+[Method: GET, Route: panier]
+in APPPATH\Views\panier_view.php on line 99.
+ 1 APPPATH\Views\panier_view.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "img"', 'C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_view.php', 99)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_view.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('panier_view', [], true)
+ 5 APPPATH\Controllers\PanierController.php(22): view('panier_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->afficher_panier()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-31 14:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 14:59:32 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: panier]
+in APPPATH\Views\panier_view.php on line 99.
+ 1 APPPATH\Views\panier_view.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_view.php', 99)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_view.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('panier_view', [], true)
+ 5 APPPATH\Controllers\PanierController.php(22): view('panier_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->afficher_panier()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-31 15:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:10:35 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: panier_view]
+in APPPATH\Views\panier_view.php on line 99.
+ 1 APPPATH\Views\panier_view.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_view.php', 99)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_view.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('panier_view', [], true)
+ 5 APPPATH\Controllers\PanierController.php(15): view('panier_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->panier_view()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-31 15:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:10:48 --> ErrorException: Undefined array key "image"
+[Method: GET, Route: panier_view]
+in APPPATH\Views\panier_view.php on line 99.
+ 1 APPPATH\Views\panier_view.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_view.php', 99)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Shop\\app\\Views\\panier_view.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('panier_view', [], true)
+ 5 APPPATH\Controllers\PanierController.php(15): view('panier_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PanierController->panier_view()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanierController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Shop\\public\\index.php')
+INFO - 2024-05-31 15:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:23:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:24:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Shop</title>
+    <title>Philia Shop</title>
     <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
     <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <link href="css/style.min.css" rel="stylesheet">
@@ -34,13 +34,20 @@
         color: #1C274C !important;
         transition: 0.5s;
     }
+    .card-hover-effect {
+        transition: transform 0.3s ease-in-out;
+    }
+    .card-hover-effect:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
 </style>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
             <div class="container">
-                <a class="navbar-brand text-dark" href="index.php">Hidden <span class="bg-danger bg-gradient p-1 rounded-3 text-light">Shop</span></a>
+                <a class="navbar-brand text-dark" href="index.php">Philia <span class="bg-danger bg-gradient p-1 rounded-3 text-light">Shop</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -88,7 +95,7 @@
             <div class="row">
                 <?php foreach ($articles as $art) : ?>
                     <div class="col py-4">
-                        <div class="card card-size">
+                        <div class="card card-size card-hover-effect">
                             <?php
                             // Convertit les données d'image en base64
                             $imgData = base64_encode($art['img']);
@@ -99,7 +106,7 @@
                             <div class="card-body">
                                 <h5 class="card-title text-start fs-6 text-primary"><?php echo $art['designation']; ?></h5>
                                 <p class="card-text"><span>Prix : </span><?php echo $art['prix']; ?><span> $</span></p>
-                                <a class="btn btn-outline-primary" href="<?php echo base_url('Boutique') . '?id_produit=' . $art['id_produit']; ?>">Voir plus <i class="fas fa-plus"></i></a>
+                                <a class="btn btn-outline-primary" href="<?php echo base_url('Boutique') . '?id_produit=' . $art['id_produit']; ?>"> Voir plus <i class=" fas fa-plus"></i></a>
                             </div>
                         </div>
                     </div>

@@ -18,6 +18,7 @@ $routes->post('user_create', 'Users::user_create');
 $routes->post('user_connect', 'Users::user_connect');
 $routes->get('logout', 'Users::logout');
 $routes->get('modifier_produit/(:num)', 'Produit::modifier_produit/$1');
+$routes->get('delete_product/(:num)', 'Produit::delete_product/$1');
 $routes->post('ProduitController/update_produit', 'Produit::update_produit');
 $routes->get('modifier_user/(:num)', 'Users::modifier_user/$1');
 $routes->post('Users/update_user', 'Users::update_user');
@@ -31,7 +32,9 @@ $routes->post('PanierController/proceder_au_paiement', 'PanierController::proced
 $routes->get('/Dashboard_view_controlleur', 'Dashboard_view_controlleur::dashboard_view');
 $routes->get('/ErrorController', 'ErrorController::error_404');
 $routes->get('/UserDash', 'UserDash::users_dash');
+$routes->get('delete_user/(:num)', 'UserDash::delete_user/$1');
 $routes->get('/Pan', 'Pan::panier_dashboard');
+$routes->get('delete_panier/(:num)', 'Pan::delete_panier/$1');
 $routes->get('panier_view', 'PanierController::panier_view');
 $routes->post('ajouter_au_panier', 'PanierController::ajouter_au_panier');
 $routes->post('modifier_quantite', 'PanierController::modifier_quantite');

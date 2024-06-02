@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier User</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/back.png">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url() ?>/public/css/fontawesome.css">
@@ -59,6 +60,32 @@
 <?php else : ?>
     <p>Utilisateur non trouvé.</p>
 <?php endif; ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const updateButton = document.querySelector('button[type="submit"]');
+        const updateForm = document.querySelector('form');
+
+        updateButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Empêche la soumission immédiate du formulaire
+
+            Swal.fire({
+                title: 'Êtes-vous sûr?',
+                text: "Voulez-vous vraiment modifier les informations de cet utilisateur?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Oui, modifier!',
+                cancelButtonText: 'Annuler'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    updateForm.submit(); // Soumet le formulaire si l'utilisateur confirme
+                }
+            });
+        });
+    });
+</script>
 
 </div>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Shop</title>
+    <title>Philia Shop</title>
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/logo.png">
     <!-- Custom CSS -->
     <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -44,6 +44,14 @@
             /* font-size: 15px !important; */
             transition: 0.5s;
         }
+
+        .card-hover-effect {
+        transition: transform 0.3s ease-in-out;
+    }
+    .card-hover-effect:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
     </style>
 </head>
 
@@ -52,7 +60,7 @@
     <header>
         <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
             <div class="container">
-                <a class="navbar-brand text-dark" href="index.php">Hidden <span class="bg-danger bg-gradient p-1 rounded-3 text-light">Shop</span></a>
+                <a class="navbar-brand text-dark" href="index.php">Philia <span class="bg-danger bg-gradient p-1 rounded-3 text-light">Shop</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -88,31 +96,31 @@
         </section>
 
         <section class="main-section py-4">
-            <div class="container">
-                <h3 class="fw-lighter py-4"><span class="border-bottom border-primary border-2">Nos meilleurs</span> produits en vente</h3>
-                <div class="row">
-                    <?php foreach ($articles as $art) : ?>
-                        <div class="col-md-4 my-custom-div d-flex justify-content-center align-items-center">
-                            <div class="card mycard">
-                                <?php
-                                // Convertit les données d'image en base64
-                                $imgData = base64_encode($art['img']);
+    <div class="container">
+        <h3 class="fw-lighter py-4"><span class="border-bottom border-primary border-2">Nos meilleurs</span> produits en vente</h3>
+        <div class="row">
+            <?php foreach ($articles as $art) : ?>
+                <div class="col-md-4 my-custom-div d-flex justify-content-center align-items-center">
+                    <div class="card mycard card-hover-effect">
+                        <?php
+                        // Convertit les données d'image en base64
+                        $imgData = base64_encode($art['img']);
 
-                                // Construit l'URL de données avec le type MIME de l'image
-                                $imgUrl = 'data:image/jpeg;base64,' . $imgData;
-                                ?>
-                                <img src="<?php echo $imgUrl; ?>" class="card-img-top my-img" alt="<?php echo $art['designation']; ?>">
-                                <div class="card-body">
-                                    <h5 class="card-title text-start fs-6 text-primary "><?php echo $art['designation']; ?></h5>
-                                    <p class="card-text fw-bold"><span>Prix : </span><?php echo $art['prix']; ?><span> $</span></p>
-                                    <a class="btn btn-outline-primary" href="<?php echo base_url('Boutique') . '?id_produit=' . $art['id_produit']; ?>"><i class="fas fa-cart-plus"></i> Acheter</a>
-                                </div>
-                            </div>
+                        // Construit l'URL de données avec le type MIME de l'image
+                        $imgUrl = 'data:image/jpeg;base64,' . $imgData;
+                        ?>
+                        <img src="<?php echo $imgUrl; ?>" class="card-img-top my-img" alt="<?php echo $art['designation']; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6 text-primary "><?php echo $art['designation']; ?></h5>
+                            <p class="card-text fw-bold"><span>Prix : </span><?php echo $art['prix']; ?><span> $</span></p>
+                            <a class="btn btn-outline-primary" href="<?php echo base_url('Boutique') . '?id_produit=' . $art['id_produit']; ?>"><i class="fas fa-cart-plus"></i> Acheter</a>
                         </div>
-                    <?php endforeach; ?>
+                    </div>
                 </div>
-            </div>
-        </section>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
 
     </div>
 

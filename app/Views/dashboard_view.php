@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hidden Shop Dashboard</title>
+    <title>Philia Shop Dashboard</title>
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/back.png">
     <!-- Custom CSS -->
     <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
                 <div class="navbar-header" data-logobg="skin6">
                     <div class="navbar-brand align-items-center d-flex">
                         <img src="plugins/images/logo-icon.png" alt="" width="30px">
-                        <a class="text-dark fw-bold align-items-center" href="">Hidden Shop</a>
+                        <a class="text-dark fw-bold align-items-center" href="">Philia Shop</a>
                     </div>
 
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>

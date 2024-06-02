@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Shop</title>
+    <title>Philia Shop</title>
     <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
     <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <link href="css/style.min.css" rel="stylesheet">
@@ -30,6 +30,12 @@
             width: 100%;
         }
     }
+    .product-img:hover {
+    transform: scale(1.1); /* Augmentez légèrement pour un meilleur effet de zoom */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Ajoutez la transition pour box-shadow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ajoutez une ombre pour un effet plus profond */
+}
     </style>
 </head>
 
@@ -75,7 +81,7 @@
                         $imgData = base64_encode($art['img']);
                         $src = 'data:image/jpeg;base64,' . $imgData;
                         ?>
-                        <img src="<?= $src; ?>" alt="Image du produit" style="max-width: 100%;">
+                        <img src="<?= $src; ?>" alt="Image du produit" class="product-img" style="max-width: 100%;">
                     </div>
                     <div class="col-md-8">
                         <h5 class="text-start fs-4 text-primary py-4"><?= $art['designation']; ?></h5>
@@ -89,7 +95,7 @@
                                     <input class="form-control rounded-pill text-center fw-bold" name="quantite" type="number" placeholder="Quantité">
                                 </div>
                                 <div class="col-md-6 col-lg-4 mb-3 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-outline-success btn-block rounded-pill"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+                                    <button type="submit" class="btn btn-outline-success btn-block"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
                                 </div>
                             </div>
                         </form>

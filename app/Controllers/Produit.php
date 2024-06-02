@@ -78,6 +78,28 @@ class Produit extends BaseController
             return redirect()->back();
         }
     }
+
+    public function delete_product($id = null) {
+        $produitmodel = new ProduitModel();
+    
+        if ($id != null) {
+            $produit = $produitmodel->where('id_produit', $id)->first();
+    
+            if ($produit) {
+                if ($produitmodel->delete($id)) {
+                    session()->setFlashdata('succes', 'Le produit a été supprimé avec succès.');
+                    return redirect()->to(base_url('Produit'));
+                } else {
+                    session()->setFlashdata('error', 'La suppression du produit a échoué.');
+                    return redirect()->back();
+                }
+            } else {
+                return "Produit non trouvé.";
+            }
+        } else {
+            return "ID de produit non fourni.";
+        }
+    }
 }
 
 

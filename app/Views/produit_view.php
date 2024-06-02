@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="<?= base_url('css/style.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url() ?>/public/css/fontawesome.css">
@@ -35,6 +36,20 @@
                         <?php echo session()->get('success'); ?>
                     </div>
                 <?php } ?>
+
+                <?php $session = session(); ?>
+
+<?php if ($session->getFlashdata('succes')): ?>
+    <div class="alert alert-danger">
+        <?= $session->getFlashdata('succes'); ?>
+    </div>
+<?php endif; ?>
+
+<?php if ($session->getFlashdata('error')): ?>
+    <div class="alert alert-danger">
+        <?= $session->getFlashdata('error'); ?>
+    </div>
+<?php endif; ?>
 
                 <div class="col-md-4">
                     <label for="designation" class="form-label fw-bold text-primary">Designation</label>
@@ -105,7 +120,8 @@
                                 <td><?php echo $prod['prix']; ?></td>
                                 <td><?php echo $prod['qte']; ?></td>
                                 <td class="d-grid gap-3">
-                                    <a class="btn btn-outline-danger p-2" href=""><i class="fa fa-eraser"></i></a>
+                                    <a href="#" class="btn btn-outline-danger p-2" onclick="confirmDeletion(<?= $prod['id_produit'] ?>);"><i class="fa fa-eraser"></i></a>
+                                    
                                     <a href="<?= base_url('modifier_produit/' . $prod['id_produit']) ?>" class="btn btn-outline-secondary p-2"><i class="fa fa-edit"></i></a>
                                 </td>
 
@@ -118,6 +134,25 @@
             </table>
         </div>
     </div>
+
+    <script>
+        function confirmDeletion(productId) {
+    Swal.fire({
+        title: 'Êtes-vous sûr?',
+        text: "Vous ne pourrez pas revenir en arrière!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Oui, supprimez-le!',
+        cancelButtonText: 'Annuler'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = `<?= base_url('delete_product/') ?>${productId}`;
+        }
+    });
+}
+    </script>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

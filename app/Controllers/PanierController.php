@@ -42,7 +42,8 @@ class PanierController extends BaseController
                     'id' => $id_produit, // Ajouter l'identifiant du produit
                     'designation' => $article['designation'],
                     'prix' => $article['prix'],
-                    'quantite' => $quantite
+                    'quantite' => $quantite,
+                    
                 ];
             }
 

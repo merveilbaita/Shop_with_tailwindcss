@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Shop</title>
+    <title>Philia Shop</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url() ?>/public/css/fontawesome.css">
@@ -50,7 +52,7 @@
         <!-- Début de la balise <nav> -->
         <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
             <div class="container">
-                <a class="navbar-brand text-dark" href="index.php">Hidden <span class="bg-danger bg-gradient p-1 rounded-3 text-light">Shop</span></a>
+                <a class="navbar-brand text-dark" href="index.php">Philia <span class="bg-danger bg-gradient p-1 rounded-3 text-light">Shop</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -115,7 +117,7 @@
                                     <input style="width:400px" name="pw" type="password" class="form-control text-center rounded-pill" id="pw" placeholder="mot de passe" required>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button style="width:200px" class="btn btn-outline-primary mt-4 rounded-pill text-dark" type="submit">Connecter <i class="fas fa-lock-open"></i></button>
+                                    <button style="width:200px" class="btn btn-outline-primary mt-4  text-dark" type="submit">Connecter <i class="fas fa-lock-open"></i></button>
                                 </div>
 
                             </form>
@@ -123,7 +125,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 create connect"> <!-- Modification ici -->
-                    <form action="<?php echo base_url('user_create'); ?>" method="post" class="mycard">
+                    <form action="<?php echo base_url('user_create'); ?>" method="post" class="mycard" id="myForm">
                         <h4 class="fw-lighter text-dark fw-bold border-bottom fs-3"><i class="fa fa-user"></i> Inscrivez-vous</h4>
                         <?php if (session()->get('success')) { ?>
                             <div class="alert alert-success">
@@ -144,7 +146,7 @@
                         <p class="text-dark fw-lighter">Vos données personnelles seront utilisées pour vous accompagner au cours de votre visite du site web, gérer l’accès à votre compte, et pour d’autres raisons décrites dans notre politique de confidentialité.</p>
                         <p class="text-dark fw-lighter py-2">Veuillez retenir votre <strong class="fw-bold text-primary border-bottom border-2">Mot de passe !!!</strong>.</p>
                         <div class="d-flex justify-content-center">
-                            <button style="width:200px" class="btn btn-outline-primary mt-1 rounded-pill text-dark" type="submit">Soumettre <i class="fas fa-plus"></i></button>
+                            <button style="width:200px" class="btn btn-outline-primary mt-1 text-dark" type="submit">Soumettre <i class="fas fa-plus"></i></button>
                         </div>
 
                     </form>
@@ -163,6 +165,28 @@
             <a href=""><i class="fab fa-instagram"></i></a>
         </p>
     </footer>
+    <script>
+$(document).ready(function() {
+    $('#myForm').on('submit', function(e) {
+        e.preventDefault(); // Empêche la soumission réelle du formulaire
+
+        Swal.fire({
+            title: 'Êtes-vous sûr?',
+            text: "Voulez-vous valider l'inscription ?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Oui, soumettre!',
+            cancelButtonText: 'Annuler'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.submit(); // Soumet le formulaire si l'utilisateur confirme
+            }
+        });
+    });
+});
+</script>
 
     <!-- Ajout du lien vers Bootstrap JS -->
     <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
