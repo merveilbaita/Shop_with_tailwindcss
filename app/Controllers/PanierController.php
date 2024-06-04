@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 
 use App\Models\ProduitModel;
@@ -14,11 +13,11 @@ class PanierController extends BaseController
         $panier = session()->get('panier');
         return view('panier_view', ['panier' => $panier]);
     }
+
     public function afficher_panier()
     {
         $session = session();
         $panier = $session->get('panier') ?? [];
-
         return view('panier_view', ['panier' => $panier]);
     }
 
@@ -39,22 +38,18 @@ class PanierController extends BaseController
             } else {
                 // Sinon, ajouter le produit avec la désignation et l'identifiant
                 $panier[$id_produit] = [
-                    'id' => $id_produit, // Ajouter l'identifiant du produit
+                    'id' => $id_produit,
                     'designation' => $article['designation'],
                     'prix' => $article['prix'],
                     'quantite' => $quantite,
-                    
                 ];
             }
-
             session()->set('panier', $panier);
-
             return redirect()->to(base_url('panier_view'));
         } else {
             return redirect()->to(base_url('erreur'));
         }
     }
-
 
     public function vider_panier()
     {
@@ -114,40 +109,39 @@ class PanierController extends BaseController
                 }
             }
 
-            // Supposons que l'enregistrement a réussi
-            session()->setFlashdata('success', 'Votre commande a été passée avec succès.');
+            // Sauvegarder le contenu du panier dans une session
+            session()->set('last_order_cart_' . $user_id, $panier);
 
             // Vider le panier après la commande
             session()->remove('panier');
+
+            // Supposons que l'enregistrement a réussi
+            session()->setFlashdata('success', 'Votre commande a été passée avec succès.');
 
             return redirect()->to(base_url('panier_view'))->with('success', 'Votre commande a été enregistrée.');
         } else {
             return redirect()->to(base_url('panier_view'))->with('error', 'Votre panier est vide ou les informations de livraison sont manquantes.');
         }
     }
-    public function update_quantity()
-    {
-        $article_id = $this->request->getPost('article_id');
-        $nouvelle_quantite = $this->request->getPost('quantite');
 
-        // Récupérer le panier depuis la session
+    public function update_quantite()
+    {
+        // Récupérer l'ID de l'article et la nouvelle quantité depuis la requête POST
+        $articleId = $this->request->getPost('article_id');
+        $nouvelleQuantite = $this->request->getPost('quantite');
+
+        // Charger le modèle du panier ou effectuer la mise à jour directement
         $panier = session()->get('panier');
 
-        foreach ($panier as &$article) {
-            if ($article['id'] == $article_id) {
-
-                $article['quantite'] = $nouvelle_quantite;
-                break;
-            }
+        if (isset($panier[$articleId])) {
+            $panier[$articleId]['quantite'] = $nouvelleQuantite;
+            session()->set('panier', $panier);
+            return $this->response->setJSON(['status' => 'success']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Article non trouvé']);
         }
-
-        // Mettre à jour le panier dans la session
-        session()->set('panier', $panier);
-
-        return redirect()->to(base_url('panier'));
     }
 
-    // Suppression d'un article du panier
     public function remove_article()
     {
         $article_id = $this->request->getPost('article_id');
@@ -155,17 +149,32 @@ class PanierController extends BaseController
         // Récupérer le panier depuis la session
         $panier = session()->get('panier');
 
-        // Filtrer les articles pour supprimer celui avec l'id correspondant
-        $panier = array_filter($panier, function ($article) use ($article_id) {
-            return $article['id'] != $article_id;
-        });
+        if (isset($panier[$article_id])) {
+            unset($panier[$article_id]);
+            session()->set('panier', $panier);
+            return $this->response->setJSON(['status' => 'success']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Article non trouvé']);
+        }
+    }
 
-        // Réindexer le tableau
-        $panier = array_values($panier);
-
-        // Mettre à jour le panier dans la session
-        session()->set('panier', $panier);
-
-        return redirect()->to(base_url('panier'));
+    public function cart()
+    {
+        // Vérifier que l'utilisateur est connecté
+        if (!session()->has('user_id')) {
+            return redirect()->to(base_url('Users'))->with('error', 'Veuillez vous connecter pour voir votre dernier panier.');
+        }
+    
+        // Obtenir l'identifiant de l'utilisateur connecté
+        $user_id = session()->get('user_id');
+    
+        // Obtenir le dernier panier commandé depuis la session avec l'identifiant de l'utilisateur
+        $last_order_cart = session()->get('last_order_cart_' . $user_id);
+    
+        if ($last_order_cart) {
+            return view('cart', ['panier' => $last_order_cart]);
+        } else {
+            return redirect()->to(base_url('panier_view'))->with('error', 'Aucun panier trouvé.');
+        }
     }
 }

@@ -38,7 +38,6 @@
 </style>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
             <div class="container">
@@ -55,7 +54,7 @@
                             <a class="nav-link fw-bold" href="<?= base_url() ?>Users">Utilisateurs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="<?= base_url('panier') ?>">Voir Panier</a>
+                            <a class="nav-link fw-bold" href="<?= base_url('cart') ?>">Voir Panier</a>
                     </ul>
                 </div>
             </div>
@@ -84,46 +83,45 @@
             <div class="container mycont">
                 <div class="row">
                     <div class="col">
-                        <h4 class="text-center border-bottom border-2" style="color:#1C274C">Détails de votre panier</h4>
-                        <table class="table table-bordered">
+                        <h4 class="text-center py-3" style="color:#1C274C">Détails de votre panier</h4>
+                        <table class="table">
                             <thead>
-                            <tr>
-   
-    <th>Désignation</th>
-    <th>Prix</th>
-    <th>Quantité</th>
-    <th>Total</th>
-    <th>Actions</th>
-</tr>
-<?php foreach ($panier as $article) : ?>
-    <?php if (isset($article['id'])) : ?>
-        <tr>
-            
-            <td><?php echo $article['designation']; ?></td>
-            <td><?php echo $article['prix']; ?> $</td>
-            <td>
-                <form action="<?= base_url('panier/update_quantity') ?>" method="post" class="d-inline">
-                    <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
-                    <input type="number" name="quantite" value="<?= $article['quantite'] ?>" min="1" class="form-control d-inline text-center" style="width: 70px;">
-                    <button type="submit" class="btn btn-outline-primary ms-2"><i class="fa fa-check"></i></button>
-                </form>
-            </td>
-            <td><?php echo $article['prix'] * $article['quantite']; ?> $</td>
-            <td>
-                <form action="<?= base_url('panier/remove_article') ?>" method="post" class="d-inline">
-                    <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
-                    <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash"></i></button>
-                </form>
-            </td>
-        </tr>
-    <?php else : ?>
-        <tr>
-            <td colspan="6" class="alert alert-danger">
-                Un des articles du panier est mal formé et ne contient pas d'ID.
-            </td>
-        </tr>
-    <?php endif; ?>
-<?php endforeach; ?>
+                                <tr>
+                                    <th class="fw-lighter">Désignation</th>
+                                    <th class="fw-lighter">Prix</th>
+                                    <th class="fw-lighter">Quantité</th>
+                                    <th class="fw-lighter">Total</th>
+                                    <th class="fw-lighter">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($panier as $article) : ?>
+                                    <?php if (isset($article['id'])) : ?>
+                                        <tr>
+                                            <td><?php echo $article['designation']; ?></td>
+                                            <td><?php echo $article['prix']; ?> $</td>
+                                            <td>
+                                                <form class="d-inline update-quantity-form">
+                                                    <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
+                                                    <input type="number" name="quantite" value="<?= $article['quantite'] ?>" min="1" class="form-control" style="width: 70px;">
+                                                </form>
+                                            </td>
+                                            <td><?php echo $article['prix'] * $article['quantite']; ?> $</td>
+                                            <td>
+                                                <form action="<?= base_url('panier/remove_article') ?>" method="post" class="d-inline">
+                                                    <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
+                                                    <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php else : ?>
+                                        <tr>
+                                            <td colspan="6" class="alert alert-danger">
+                                                Un des articles du panier est mal formé et ne contient pas d'ID.
+                                            </td>
+                                        </tr>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
 
                                 <!-- Calcul et affichage du prix total à payer -->
                                 <?php
@@ -178,42 +176,54 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"><i class="fa fa-exited"></i> Fermer</button>
-                        <button type="button" class="btn btn-outline-primary" id="validateButton"><i class="fa fa-check"></i> Valider</button>
+                        <button type="button" class="btn btn-outline-primary" id="validateButton"><i class="fa fa-save"></i> Enregistrer</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
     <script>
-document.getElementById('validateButton').addEventListener('click', function() {
-    Swal.fire({
-        title: 'Confirmation',
-        text: "Êtes-vous sûr de vouloir procéder avec cette adresse?",
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Oui, confirmer!',
-        cancelButtonText: 'Non, annuler'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.getElementById('livraisonModal').querySelector('form').submit();
-        }
-    });
-});
-</script>
+        $(document).ready(function() {
+            // Gestionnaire d'événement pour la modification de la quantité
+            $('.update-quantity-form input[name="quantite"]').on('input', function() {
+                var $form = $(this).closest('form');
+                $.ajax({
+                    url: '<?= base_url('panier/update_quantite') ?>',
+                    type: 'POST',
+                    data: $form.serialize(),
+                    success: function(response) {
+                        // Mettez à jour la page ou affichez un message de succès si nécessaire
+                        location.reload(); // Recharge la page pour mettre à jour les totaux
+                    },
+                    error: function(xhr, status, error) {
+                        // Gérez les erreurs si nécessaire
+                        alert('Erreur lors de la mise à jour de la quantité');
+                    }
+                });
+            });
+        });
 
+        document.getElementById('validateButton').addEventListener('click', function() {
+            Swal.fire({
+                title: 'Êtes-vous sûr ?',
+                text: "Vous êtes sur le point de valider votre panier.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Oui, valider!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Soumettre le formulaire de paiement
+                    document.querySelector('form[action="<?= base_url('PanierController/proceder_au_paiement') ?>"]').submit();
+                }
+            });
+        });
+    </script>
 
-    <script src="<?= base_url('assets/js/panier.js'); ?>"></script>
     <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
-
-    <footer style="background-color: #1C274C; position:fixed; width:100%; bottom:0;" class="footer text-center">
-        2024 © Hidden Dark Lab Tous droit réservé <br>
-        <p class="text-start">Pour plus de question,
-            <a href="">Facebook</a>
-            <a href="">Instagram</a>
-        </p>
-    </footer>
+    <script src="<?= base_url('assets/js/jquery.min.js') ?>"></script>
 </body>
 
 </html>

@@ -25,6 +25,7 @@ $routes->post('Users/update_user', 'Users::update_user');
 $routes->post('admin_connect', 'AdminController::admin_connect');
 $routes->post('register', 'AdminController::register');
 $routes->get('panier_view', 'PanierController::panier_view');
+$routes->get('cart', 'PanierController::cart');
 $routes->post('vider_panier', 'PanierController::vider_panier');
 $routes->get('vider_panier', 'PanierController::vider_panier');
 $routes->post('ajouter_au_panier', 'PanierController::ajouter_au_panier');
@@ -51,6 +52,8 @@ $routes->post('panier/remove_article', 'PanierController::remove_article');
 $routes->get('panier/afficher', 'PanierController::afficher_panier');
 $routes->get('Article/article/(:any)', 'Article::article/$1');
 $routes->get('Article/article', 'Article::article');
+$routes->post('panier/update_quantite', 'PanierController::update_quantite');
+
 
 
 
