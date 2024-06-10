@@ -65,6 +65,7 @@ class Produit extends BaseController
         $data = [
             'designation' => $this->request->getPost('designation'),
             'description' => $this->request->getPost('description'),
+            'description_courte' => $this->request->getPost('description_courte'),
             'prix' => $this->request->getPost('prix'),
             'qte' => $this->request->getPost('qte'),
             'categories' => $this->request->getPost('categories')

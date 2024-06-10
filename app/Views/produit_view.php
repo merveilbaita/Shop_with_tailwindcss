@@ -62,6 +62,11 @@
                 </div>
 
                 <div class="col-md-4">
+                    <label for="description_courte" class="form-label fw-bold text-primary">Description courte</label>
+                    <textarea name="description_courte" class="form-control text-center" placeholder=" Ram, Rom, couleur"></textarea>
+                </div>
+
+                <div class="col-md-4 mt-4">
                     <label for="formFile" class="form-label fw-bold text-primary">Image du produit</label>
                     <input type="file" class="form-control" name="img" id="formFile">
                 </div>
@@ -76,7 +81,7 @@
                     <input name="qte" type="number" class="form-control text-center" id="qte" placeholder="20">
                 </div>
 
-                <div class="col-md-4 mt-4">
+                <div class="col-md-12 mt-4">
                     <label for="marque" class="form-label fw-bold text-primary">Marque</label>
                     <input name="categories" type="text" class="form-control text-center" id="marque" placeholder="Pixel">
                 </div>
@@ -96,6 +101,7 @@
                         <th class="text-white" scope="col">Id</th>
                         <th class="text-white" scope="col">Designation</th>
                         <th class="text-white" scope="col">Description</th>
+                        <th class="text-white" scope="col">Description courte</th>
                         <th class="text-white" scope="col">Marque</th>
                         <th class="text-white" scope="col">Image</th>
                         <th class="text-white" scope="col">Prix</th>
@@ -111,6 +117,7 @@
                                 <th scope="row"><?php echo $prod['id_produit']; ?></th>
                                 <td><?php echo $prod['designation']; ?></td>
                                 <td><?php echo $prod['description']; ?></td>
+                                <td><?php echo $prod['description_courte']; ?></td>
                                 <td><?php echo $prod['categories']; ?></td>
                                 <td>
                                     <?php $imgData = base64_encode($prod['img']);

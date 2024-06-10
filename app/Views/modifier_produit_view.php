@@ -41,22 +41,27 @@
                         <input class="form-control text-center" type="text" id="designation" name="designation" value="<?php echo $produit['designation']; ?>" required>
                     </div>
 
-                    <div class="col-md-10">
+                    <div class="col-md-4">
                         <label for="description" class="form-label fw-bold text-primary">Description du produit</label>
                         <textarea class="form-control text-start" id="description" name="description" required><?php echo $produit['description']; ?></textarea>
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-4">
+                        <label for="description_courte" class="form-label fw-bold text-primary">Description courte</label>
+                        <textarea class="form-control text-start" id="description_courte" name="description_courte" required><?php echo $produit['description']; ?></textarea>
+                    </div>
+
+                    <div class="col-md-4">
                         <label for="prix" class="form-label fw-bold text-primary">Prix du produit</label>
                         <input class="form-control text-center" type="text" id="prix" name="prix" value="<?php echo $produit['prix']; ?>" required>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <label for="qte" class="form-label fw-bold text-primary">Quantité du produit</label>
                         <input class="form-control text-center" type="number" id="qte" name="qte" value="<?php echo $produit['qte']; ?>" required>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <label for="Categorie" class="form-label fw-bold text-primary">Marque</label>
                         <input class="form-control text-center" type="text" id="categories" name="categories" value="<?php echo $produit['categories']; ?>" required><br>
                     </div>

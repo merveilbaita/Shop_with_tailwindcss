@@ -14,7 +14,7 @@ class ProduitModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['designation','description','categories',  'img', 'prix', 'qte'];
+    protected $allowedFields = ['designation','description','description_courte','categories',  'img', 'prix', 'qte'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -164,6 +164,14 @@
             <a href="https://web.facebook.com/merveil.baita"><i class="fab fa-facebook"></i></a>
             <a href=""><i class="fab fa-instagram"></i></a>
         </p>
+        <a class="navbar-brand text-white py-2 d-flex" href="index.php">Philia <span class="bg-danger bg-gradient  rounded-3 text-light">Shop</span></a>
+        <p class=" mr-2 py-3 d-flex text-secondaty">
+            <img src="<?=base_url("assets/images/assistant-svgrepo-com.svg")?>" alt="footer-contact_logo" style="width: 50px;">
+            <strong class="text-secondary mr-2">BESOIN D'ASSISTANCE ? </strong> NOUS SOMMES DISPONIBLE DE 8h - 17h
+            <hr>
+            <span style="cursor: pointer;" class="fw-bold text-white">+243 890 000 000</span> 
+            <span style="cursor: pointer;" class="fw-bold text-light" >+243 977 061 220</span> 
+        </p>
     </footer>
     <script>
 $(document).ready(function() {
