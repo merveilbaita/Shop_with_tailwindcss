@@ -96,6 +96,7 @@
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="<?= base_url('user.php') ?>">Utilisateurs</a>
                         </li>
+                        
                     </ul>
                 </div>
             </div>

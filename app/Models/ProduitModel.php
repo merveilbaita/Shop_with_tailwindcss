@@ -54,4 +54,13 @@ class ProduitModel extends Model
     {
         return $this->select('categories')->distinct()->findAll();
     }
+
+    public function searchProducts($query)
+    {
+        // Recherchez dans les champs 'designation' et 'description'
+        // Utilisez like() ou orLike() selon vos besoins
+        return $this->like('designation', $query)
+                    ->orLike('description', $query)
+                    ->findAll();
+    }
 }

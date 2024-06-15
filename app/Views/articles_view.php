@@ -57,7 +57,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="index.php">Acceuil</a>
+                            <a class="nav-link fw-bold" href="<?= base_url() ?>">Acceuil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="<?= base_url() ?>Users">Utilisateurs</a>
@@ -72,6 +72,10 @@
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="<?= base_url('logout') ?>">Déconnexion</a>
                         </li>
+                        <form class="d-flex ms-3" action="<?= base_url('Article/search') ?>" method="get">
+                            <input class="form-control me-2" id="searchInput" type="search" placeholder="Rechercher" aria-label="Rechercher" name="query">
+                            <button class="btn btn-outline-success" type="submit">Recherche</button>
+                        </form>
                     </ul>
                 </div>
             </div>
@@ -119,7 +123,11 @@
                 <?php endforeach; ?>
             </div>
         </div>
+        <div id="searchResultsContainer"></div>
+
     </section>
+
+    
 
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -8,14 +8,24 @@ class Article extends BaseController
     {
         $produitmodel = new ProduitModel();
         
-        // Si une catégorie est spécifiée, filtrer les produits par catégorie
         if ($categorie) {
             $donnees["articles"] = $produitmodel->where('categories', $categorie)->findAll();
         } else {
             $donnees["articles"] = $produitmodel->findAll();
         }
         
-        // Obtenir toutes les catégories distinctes pour l'affichage dans la vue
+        $donnees["categories"] = $produitmodel->select('categories')->distinct()->findAll();
+        
+        return view('articles_view', $donnees);
+    }
+
+    // Ajoutez cette méthode pour la recherche
+    public function search()
+    {
+        $produitmodel = new ProduitModel();
+        $query = $this->request->getGet('query');
+        
+        $donnees["articles"] = $produitmodel->searchProducts($query);
         $donnees["categories"] = $produitmodel->select('categories')->distinct()->findAll();
         
         return view('articles_view', $donnees);

@@ -53,6 +53,8 @@ $routes->get('panier/afficher', 'PanierController::afficher_panier');
 $routes->get('Article/article/(:any)', 'Article::article/$1');
 $routes->get('Article/article', 'Article::article');
 $routes->post('panier/update_quantite', 'PanierController::update_quantite');
+$routes->get('Article/search', 'Article::search');
+
 
 
 
