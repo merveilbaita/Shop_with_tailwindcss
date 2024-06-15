@@ -54,6 +54,8 @@ $routes->get('Article/article/(:any)', 'Article::article/$1');
 $routes->get('Article/article', 'Article::article');
 $routes->post('panier/update_quantite', 'PanierController::update_quantite');
 $routes->get('Article/search', 'Article::search');
+$routes->get('commandes_utilisateur', 'PanierController::mes_commandes');
+
 
 
 

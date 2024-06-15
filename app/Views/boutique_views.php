@@ -94,7 +94,7 @@
                             <a class="nav-link fw-bold" href="<?= base_url('index.php') ?>">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="<?= base_url('user.php') ?>">Utilisateurs</a>
+                            <a class="nav-link fw-bold" href="<?= base_url('Users') ?>">Utilisateurs</a>
                         </li>
                         <li class="nav-item">
     <a class="nav-link" href="<?= base_url('panier_view') ?>">Mon panier (<span id="panier-quantite"><?= $quantite_totale ?? 0 ?></span>)</a>
@@ -114,6 +114,9 @@
             </div>
             <div class="col">
                 <a href="<?= base_url("Article")?>">Voir les articles</a>
+            </div>
+            <div class="col">
+            <a href="<?= base_url('commandes_utilisateur')?>">Voir mes commandes</a>
             </div>
             <div class="col">
                 <?php if (session()->has('user_email')) : ?>

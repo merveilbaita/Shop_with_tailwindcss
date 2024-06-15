@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Models\ProduitModel;
 use App\Models\PanierModel;
+use App\Models\CommandeModel;
 use CodeIgniter\HTTP\RedirectResponse;
 
 class PanierController extends BaseController
@@ -74,71 +75,74 @@ class PanierController extends BaseController
     }
 
     public function proceder_au_paiement(): RedirectResponse
-    {
-        if (!session()->has('user_id')) {
-            return redirect()->to(base_url('Users'))->with('error', 'Veuillez vous connecter pour continuer le processus.');
-        }
-
-        $panier = session()->get('panier');
-        $user_id = session()->get('user_id');
-        $mail = session()->get('mail');
-        $adresse = $this->request->getPost('adresse');
-        $ville = $this->request->getPost('ville');
-        $code_postal = $this->request->getPost('code_postal');
-        $pays = $this->request->getPost('pays');
-
-        if ($panier && $adresse && $ville && $code_postal && $pays) {
-            $panierModel = new PanierModel();
-            $produitModel = new ProduitModel();
-
-            foreach ($panier as $produit_id => $details) {
-                // Insérer la commande dans la base de données
-                $panierModel->insert([
-                    'user_id' => $user_id,
-                    'mail' => $mail,
-                    'produit_id' => $produit_id,
-                    'designation' => $details['designation'],
-                    'qte' => $details['quantite'],
-                    'adresse' => $adresse,
-                    'ville' => $ville,
-                    'code_postal' => $code_postal,
-                    'pays' => $pays
-                ]);
-
-                // Récupérer le produit de la base de données
-                $produit = $produitModel->find($produit_id);
-
-                // Vérifier si le produit a été trouvé
-                if ($produit) {
-                    // Calculer la nouvelle quantité
-                    $nouvelle_quantite = $produit['qte'] - $details['quantite'];
-
-                    // Vérifier si la nouvelle quantité est valide
-                    if ($nouvelle_quantite < 0) {
-                        return redirect()->to(base_url('panier_view'))->with('error', 'Stock insuffisant pour le produit : ' . $details['designation']);
-                    }
-
-                    // Mettre à jour la quantité du produit dans la base de données
-                    $produitModel->update($produit_id, ['qte' => $nouvelle_quantite]);
-                } else {
-                    return redirect()->to(base_url('panier_view'))->with('error', 'Produit non trouvé : ' . $details['designation']);
-                }
-            }
-
-            // Sauvegarder le contenu du panier dans une session
-            session()->set('last_order_cart_' . $user_id, $panier);
-
-            // Vider le panier après la commande
-            session()->remove('panier');
-
-            // Supposons que l'enregistrement a réussi
-            session()->setFlashdata('success', 'Votre commande a été passée avec succès.');
-
-            return redirect()->to(base_url('panier_view'))->with('success', 'Votre commande a été enregistrée.');
-        } else {
-            return redirect()->to(base_url('panier_view'))->with('error', 'Votre panier est vide ou les informations de livraison sont manquantes.');
-        }
+{
+    if (!session()->has('user_id')) {
+        return redirect()->to(base_url('Users'))->with('error', 'Veuillez vous connecter pour continuer le processus.');
     }
+
+    $panier = session()->get('panier');
+    $user_id = session()->get('user_id');
+    $mail = session()->get('mail');
+    $adresse = $this->request->getPost('adresse');
+    $ville = $this->request->getPost('ville');
+    $code_postal = $this->request->getPost('code_postal');
+    $pays = $this->request->getPost('pays');
+
+    if ($panier && $adresse && $ville && $code_postal && $pays) {
+        $panierModel = new PanierModel();
+        $produitModel = new ProduitModel();
+        $commandeModel = new CommandeModel();
+
+        foreach ($panier as $produit_id => $details) {
+            // Insérer la commande dans la base de données
+            $panierModel->insert([
+                'user_id' => $user_id,
+                'mail' => $mail,
+                'produit_id' => $produit_id,
+                'designation' => $details['designation'],
+                'qte' => $details['quantite'],
+                'adresse' => $adresse,
+                'ville' => $ville,
+                'code_postal' => $code_postal,
+                'pays' => $pays,
+                'date_ajout' => date('Y-m-d H:i:s')
+            ]);
+
+            // Récupérer le produit de la base de données
+            $produit = $produitModel->find($produit_id);
+
+            // Vérifier si le produit a été trouvé
+            if ($produit) {
+                // Calculer la nouvelle quantité
+                $nouvelle_quantite = $produit['qte'] - $details['quantite'];
+
+                // Vérifier si la nouvelle quantité est valide
+                if ($nouvelle_quantite < 0) {
+                    return redirect()->to(base_url('panier_view'))->with('error', 'Stock insuffisant pour le produit : ' . $details['designation']);
+                }
+
+                // Mettre à jour la quantité du produit dans la base de données
+                $produitModel->update($produit_id, ['qte' => $nouvelle_quantite]);
+            } else {
+                return redirect()->to(base_url('panier_view'))->with('error', 'Produit non trouvé : ' . $details['designation']);
+            }
+        }
+
+        // Sauvegarder le contenu du panier dans une session
+        session()->set('last_order_cart_' . $user_id, $panier);
+
+        // Vider le panier après la commande
+        session()->remove('panier');
+
+        // Supposons que l'enregistrement a réussi
+        session()->setFlashdata('success', 'Votre commande a été passée avec succès.');
+
+        return redirect()->to(base_url('panier_view'))->with('success', 'Votre commande a été enregistrée.');
+    } else {
+        return redirect()->to(base_url('panier_view'))->with('error', 'Votre panier est vide ou les informations de livraison sont manquantes.');
+    }
+}
+
 
     public function update_quantite()
     {
@@ -199,4 +203,23 @@ class PanierController extends BaseController
         $panier = session()->get('panier') ?? [];
         return array_sum(array_column($panier, 'quantite'));
     }
+
+    public function mes_commandes()
+    {
+        // Vérifier que l'utilisateur est connecté
+        if (!session()->has('user_id')) {
+            return redirect()->to(base_url('Users'))->with('error', 'Veuillez vous connecter pour voir vos commandes.');
+        }
+    
+        // Obtenir l'identifiant de l'utilisateur connecté
+        $user_id = session()->get('user_id');
+    
+        // Charger les commandes de l'utilisateur depuis la table panier
+        $panierModel = new PanierModel();
+        $commandes = $panierModel->where('user_id', $user_id)->orderBy('date_ajout', 'DESC')->findAll();
+    
+        echo view('commandes_utilisateur', ['commandes' => $commandes]);
+    }
+    
+
 }
