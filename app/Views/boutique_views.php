@@ -96,7 +96,11 @@
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="<?= base_url('user.php') ?>">Utilisateurs</a>
                         </li>
-                        
+                        <li class="nav-item">
+    <a class="nav-link" href="<?= base_url('panier_view') ?>">Mon panier (<span id="panier-quantite"><?= $quantite_totale ?? 0 ?></span>)</a>
+</li>
+
+
                     </ul>
                 </div>
             </div>
@@ -107,6 +111,9 @@
         <div class="container">
             <div class="col">
                 <h4 class="fw-bold text-dark border-bottom border-3 py-3">Poursuivre votre achat</h4>
+            </div>
+            <div class="col">
+                <a href="<?= base_url("Article")?>">Voir les articles</a>
             </div>
             <div class="col">
                 <?php if (session()->has('user_email')) : ?>
@@ -139,7 +146,7 @@
                             <input type="hidden" name="id_produit" value="<?= $art['id_produit']; ?>">
                             <div class="row">
                                 <div class="col-md-6 col-lg-4 mb-3">
-                                    <input class="form-control rounded-pill text-center fw-bold" name="quantite" type="number" placeholder="Quantité">
+                                    <input class="form-control rounded-pill text-center fw-bold" name="quantite" type="number" placeholder="Quantité" value=1>
                                 </div>
                                 <div class="col-md-6 col-lg-4 mb-3 d-flex justify-content-center">
                                     <button type="submit" class="btn btn-outline-primary btn-block"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
@@ -186,7 +193,7 @@
         </div>
     </section>
 
-    <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
+    
     <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         let imageZoom = document.querySelector('#imageZoom');
@@ -210,8 +217,55 @@
     });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    let updatePanierQuantite = () => {
+        if (<?= session()->has('user_id') ? 'true' : 'false' ?>) {
+            fetch('<?= base_url('compter_articles_panier') ?>')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('panier-quantite').textContent = data.quantite_totale;
+                });
+        } else {
+            // Utilisateur non connecté, affichez 0 dans la quantité de panier
+            document.getElementById('panier-quantite').textContent = '0';
+        }
+    };
+
+    // Appel initial pour afficher la quantité de panier au chargement de la page
+    updatePanierQuantite();
+
+    document.querySelectorAll('form[action*="ajouter_au_panier"]').forEach(form => {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            if (!<?= session()->has('user_id') ? 'true' : 'false' ?>) {
+                // Redirection vers la vue de connexion si l'utilisateur n'est pas connecté
+                window.location.href = '<?= base_url('Users') ?>';
+            } else {
+                let formData = new FormData(this);
+
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        document.getElementById('panier-quantite').textContent = data.quantite_totale;
+                    } else {
+                        alert(data.message);
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
 
 
+
+
+<script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
     <footer style="background-color: #1C274C;" class="footer text-center">
         2024 © Hidden Dark Lab Tous droit réservé <br>
         <p class="text-start">Pour plus de question,

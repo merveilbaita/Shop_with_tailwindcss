@@ -59,8 +59,8 @@ class ProduitModel extends Model
     {
         // Recherchez dans les champs 'designation' et 'description'
         // Utilisez like() ou orLike() selon vos besoins
-        return $this->like('designation', $query)
-                    ->orLike('description', $query)
+        return $this->like('categories', $query)
+                    ->orLike('designation', $query)
                     ->findAll();
     }
 }

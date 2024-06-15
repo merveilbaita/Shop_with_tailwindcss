@@ -11,18 +11,23 @@ class PanierController extends BaseController
     {
         // Récupérer le panier depuis la session
         $panier = session()->get('panier');
-        return view('panier_view', ['panier' => $panier]);
+        echo view('panier_view', ['panier' => $panier, 'quantite_totale' => $this->countPanierItems()]);
     }
 
     public function afficher_panier()
     {
         $session = session();
         $panier = $session->get('panier') ?? [];
-        return view('panier_view', ['panier' => $panier]);
+        echo view('panier_view', ['panier' => $panier, 'quantite_totale' => $this->countPanierItems()]);
     }
 
-    public function ajouter_au_panier(): RedirectResponse
+    public function ajouter_au_panier()
     {
+        // Vérifier que l'utilisateur est connecté
+        if (!session()->has('user_id')) {
+            return redirect()->to(base_url('Users'))->with('error', 'Veuillez vous connecter pour continuer le processus.');
+        }
+
         $id_produit = $this->request->getPost('id_produit');
         $quantite = $this->request->getPost('quantite');
 
@@ -45,10 +50,21 @@ class PanierController extends BaseController
                 ];
             }
             session()->set('panier', $panier);
-            return redirect()->to(base_url('panier_view'));
+
+            // Compter les articles dans le panier
+            $quantiteTotale = array_sum(array_column($panier, 'quantite'));
+
+            return $this->response->setJSON(['status' => 'success', 'quantite_totale' => $quantiteTotale]);
         } else {
-            return redirect()->to(base_url('erreur'));
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Erreur lors de l\'ajout au panier.']);
         }
+    }
+
+    public function compter_articles_panier()
+    {
+        $panier = session()->get('panier') ?? [];
+        $quantiteTotale = array_sum(array_column($panier, 'quantite'));
+        return $this->response->setJSON(['quantite_totale' => $quantiteTotale]);
     }
 
     public function vider_panier()
@@ -164,17 +180,23 @@ class PanierController extends BaseController
         if (!session()->has('user_id')) {
             return redirect()->to(base_url('Users'))->with('error', 'Veuillez vous connecter pour voir votre dernier panier.');
         }
-    
+
         // Obtenir l'identifiant de l'utilisateur connecté
         $user_id = session()->get('user_id');
-    
+
         // Obtenir le dernier panier commandé depuis la session avec l'identifiant de l'utilisateur
         $last_order_cart = session()->get('last_order_cart_' . $user_id);
-    
+
         if ($last_order_cart) {
-            return view('cart', ['panier' => $last_order_cart]);
+            echo view('cart', ['panier' => $last_order_cart, 'quantite_totale' => $this->countPanierItems()]);
         } else {
             return redirect()->to(base_url('panier_view'))->with('error', 'Aucun panier trouvé.');
         }
+    }
+
+    protected function countPanierItems()
+    {
+        $panier = session()->get('panier') ?? [];
+        return array_sum(array_column($panier, 'quantite'));
     }
 }
