@@ -63,4 +63,6 @@ class ProduitModel extends Model
                     ->orLike('designation', $query)
                     ->findAll();
     }
+
+
 }

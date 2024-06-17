@@ -44,6 +44,7 @@
             <th class="text-white" scope="col">Code Postal</th>
             <th class="text-white" scope="col">Pays</th>
             <th class="text-white" scope="col">Date d'ajout</th>
+            <th class="text-white" scope="col">Montant</th>
             <th class="text-white" scope="col">Actions</th>
             <!-- <th scope="col">Opérations</th> -->
           </tr>
@@ -68,6 +69,7 @@
                 <td><?php echo $pani['code_postal']; ?></td>
                 <td><?php echo $pani['pays']; ?></td>
                 <td><?php echo $pani['date_ajout']; ?></td>
+                <td><?php echo $pani['total']; ?> $</td>
                 <td><a href="#" class="btn btn-outline-danger p-2" onclick="confirmDeletion(<?= $pani['id'] ?>);"><i class="fa fa-eraser"></i></a></td>
               </tr>
           <?php $i++;

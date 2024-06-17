@@ -22,5 +22,6 @@ class Acceuil extends BaseController
         
         return view('index', $data);
     }
+
 }
 

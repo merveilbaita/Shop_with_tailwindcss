@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <style>
@@ -48,7 +49,9 @@
         <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
             <div class="container-fluid">
                 <div class="col">
-                <a class="navbar-brand text-dark p-0" href="index.php">Philia <span class="bg-danger bg-gradient p-1 rounded-3 text-light">Shop</span></a>
+                <a href="<?= base_url()?>">
+                    <img class="rounded-pill mybrand" src="<?= base_url('assets/images/brand3.png') ?>" alt="" style="width: 210px;">
+                </a>
                 </div>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,24 +60,21 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="<?= base_url() ?>">Acceuil</a>
+                            <a class="nav-link fw-bold text-primary" href="<?= base_url() ?>"> <i class="fas fa-home text-primary"></i> Acceuil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="<?= base_url() ?>Users">Utilisateurs</a>
+                            <a class="nav-link fw-bold text-primary" href="<?= base_url() ?>Users"><i class="fas fa-user text-primary"></i> Utilisateurs</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold" href="">
+                        <li class="nav-item ">
+                            <a class="nav-link fw-bold text-primary" href="<?= base_url('logout')?>">
                                 <?php if (session()->has('mail')) : ?>
                                     <?= session()->get('mail') ?>
                                 <?php endif; ?>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold" href="<?= base_url('logout') ?>">Déconnexion</a>
-                        </li>
                         <form class="d-flex ms-3" action="<?= base_url('Article/search') ?>" method="get">
                             <input class="form-control me-2" id="searchInput" type="search" placeholder="Rechercher" aria-label="Rechercher" name="query">
-                            <button class="btn btn-outline-success" type="submit">Recherche</button>
+                            <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </ul>
                 </div>
@@ -83,6 +83,8 @@
         </nav>
        
     </header>
+
+    
     
     <section class="main-section py-4" style="margin-top:70px">
         <div class="container">
@@ -93,13 +95,18 @@
 
             <!-- Affiche les catégories -->
             <div class="col py-2">
-                <h5>Catégories</h5>
+                <h5> <i class="fas fa-box text-primary"></i> Catégories</h5>
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="<?= base_url('Article/article') ?>" class="btn btn-outline-primary">Toutes</a></li>
+                    <li class="list-inline-item"><a href="<?= base_url('Article/article') ?>" class="btn btn-outline-dark  fw-bold">Toutes</a></li>
                     <?php foreach ($categories as $cat) : ?>
-                        <li class="list-inline-item"><a href="<?= base_url('Article/article/' . $cat['categories']) ?>" class="btn btn-outline-secondary"><?= $cat['categories'] ?></a></li>
+                        <li class="list-inline-item"><a href="<?= base_url('Article/article/' . $cat['categories']) ?>" class="btn btn-outline-dark  fw-bold"><?= $cat['categories'] ?></a></li>
                     <?php endforeach; ?>
                 </ul>
+            </div>
+            <div class="row">
+                <div class="col d-flex">
+                    <a class="text-decoration-none fw-bold ms-2 text-primary" href="<?= base_url('commandes_utilisateur') ?>"><i class="fa-solid fa-cart-plus"></i> Voir mes commandes</a>    
+                </div>
             </div>
 
             <div class="row">
@@ -141,21 +148,7 @@
     <script src="js/pages/dashboards/dashboard1.js"></script>
     <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
 
-    <footer style="background-color: #1C274C;" class="footer text-center">
-        2024 © Hidden Dark Lab Tous droits réservés <br>
-        <p class="text-start">Pour plus de questions,
-            <a href=""><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-        </p>
-        <a class="navbar-brand text-white py-2 d-flex" href="index.php">Philia <span class="bg-danger bg-gradient  rounded-3 text-light">Shop</span></a>
-        <p class=" mr-2 py-3 d-flex text-secondaty">
-            <img src="<?=base_url("assets/images/assistant-svgrepo-com.svg")?>" alt="footer-contact_logo" style="width: 50px;">
-            <strong class="text-secondary mr-2">BESOIN D'ASSISTANCE ? </strong> NOUS SOMMES DISPONIBLE DE 8h - 17h
-            <hr>
-            <span style="cursor: pointer;" class="fw-bold text-white">+243 890 000 000</span> 
-            <span style="cursor: pointer;" class="fw-bold text-light" >+243 977 061 220</span> 
-        </p>
-    </footer>
+    <?php include('footer.php') ?>
 </body>
 
 </html>

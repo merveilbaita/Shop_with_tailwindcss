@@ -9,8 +9,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url() ?>/public/css/fontawesome.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/public/css/icons/font-awesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .navbar-nav .nav-link {
             font-weight: bold !important;
@@ -158,43 +157,29 @@
 
     <!-- Ajout d'une balise <footer> pour une meilleure structure de la page -->
 
-    <footer style="background-color: #1C274C;" class="footer text-center">
-        2024 © Hidden Dark Lab Tous droit réservé <br>
-        <p class="text-start">Pour plus de question
-            <a href="https://web.facebook.com/merveil.baita"><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-        </p>
-        <a class="navbar-brand text-white py-2 d-flex" href="index.php">Philia <span class="bg-danger bg-gradient  rounded-3 text-light">Shop</span></a>
-        <p class=" mr-2 py-3 d-flex text-secondaty">
-            <img src="<?=base_url("assets/images/assistant-svgrepo-com.svg")?>" alt="footer-contact_logo" style="width: 50px;">
-            <strong class="text-secondary mr-2">BESOIN D'ASSISTANCE ? </strong> NOUS SOMMES DISPONIBLE DE 8h - 17h
-            <hr>
-            <span style="cursor: pointer;" class="fw-bold text-white">+243 890 000 000</span> 
-            <span style="cursor: pointer;" class="fw-bold text-light" >+243 977 061 220</span> 
-        </p>
-    </footer>
+    <?php include('footer.php') ?>
     <script>
-$(document).ready(function() {
-    $('#myForm').on('submit', function(e) {
-        e.preventDefault(); // Empêche la soumission réelle du formulaire
+        $(document).ready(function() {
+            $('#myForm').on('submit', function(e) {
+                e.preventDefault(); // Empêche la soumission réelle du formulaire
 
-        Swal.fire({
-            title: 'Êtes-vous sûr?',
-            text: "Voulez-vous valider l'inscription ?",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Oui, soumettre!',
-            cancelButtonText: 'Annuler'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                this.submit(); // Soumet le formulaire si l'utilisateur confirme
-            }
+                Swal.fire({
+                    title: 'Êtes-vous sûr?',
+                    text: "Voulez-vous valider l'inscription ?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Oui, soumettre!',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.submit(); // Soumet le formulaire si l'utilisateur confirme
+                    }
+                });
+            });
         });
-    });
-});
-</script>
+    </script>
 
     <!-- Ajout du lien vers Bootstrap JS -->
     <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>

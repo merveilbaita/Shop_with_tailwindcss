@@ -8,8 +8,7 @@
     <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
     <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url() ?>/public/css/fontawesome.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/public/css/icons/font-awesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .card-size:hover {
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -53,7 +52,8 @@
         /* Styles pour l'effet de zoom */
         #imageZoom {
             width: 100%;
-            height: 400px; /* Ajustez en fonction de vos besoins */
+            height: 400px;
+            /* Ajustez en fonction de vos besoins */
             position: relative;
         }
 
@@ -84,21 +84,24 @@
     <header>
         <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
             <div class="container">
-                <a class="navbar-brand text-dark" href="<?= base_url('index.php') ?>">Philia <span class="bg-danger bg-gradient p-1 rounded-3 text-light">Shop</span></a>
+                <a href="<?= base_url() ?>">
+                    <img class="rounded-pill mybrand" src="<?= base_url('assets/images/brand3.png') ?>" alt="" style="width: 210px;">
+                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="<?= base_url('index.php') ?>">Accueil</a>
+                            <a class="nav-link fw-bold text-primary" href="<?= base_url('index.php') ?>"><i class="fas fa-home"></i> Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="<?= base_url('Users') ?>">Utilisateurs</a>
+                            <a class="nav-link fw-bold text-primary" href="<?= base_url('Users') ?>"><i class="fas fa-user"></i>Utilisateurs</a>
                         </li>
                         <li class="nav-item">
-    <a class="nav-link" href="<?= base_url('panier_view') ?>">Mon panier (<span id="panier-quantite"><?= $quantite_totale ?? 0 ?></span>)</a>
-</li>
+                            <a class="nav-link text-primary" href="<?= base_url('panier_view') ?>"><i class="fa-solid fa-cart-plus fs-3"></i> (<span id="panier-quantite"><?= $quantite_totale ?? 0 ?></span>)</a>
+                        </li>
 
 
                     </ul>
@@ -112,12 +115,13 @@
             <div class="col">
                 <h4 class="fw-bold text-dark border-bottom border-3 py-3">Poursuivre votre achat</h4>
             </div>
-            <div class="col">
-                <a href="<?= base_url("Article")?>">Voir les articles</a>
+            <div class="row">
+                <div class="col d-flex">
+                    <a class="text-decoration-none fw-bold text-primary" href="<?= base_url("Article") ?>"><i class="fa-solid fa-cart-flatbed"></i> Voir les articles</a>
+                    <a class="text-decoration-none fw-bold ms-2 text-primary" href="<?= base_url('commandes_utilisateur') ?>"><i class="fa-solid fa-cart-plus"></i> Voir mes commandes</a>
+                </div>
             </div>
-            <div class="col">
-            <a href="<?= base_url('commandes_utilisateur')?>">Voir mes commandes</a>
-            </div>
+
             <div class="col">
                 <?php if (session()->has('user_email')) : ?>
                     <p>Connecté en tant que: <?= session()->get('user_email') ?></p>
@@ -141,9 +145,9 @@
                     <div class="col">
                         <h4 class="fw-lighter">A propos de ce produit</h4>
                         <h5 class="text-start fs-4 text-primary py-2"><?= $art['designation']; ?></h5>
-                        
-                            <p style="font-family: Century Gothic; text-align:justify" class="fw-lighter text py-4"><?= $art['description_courte']; ?></p>
-                        
+
+                        <p style="font-family: Century Gothic; text-align:justify" class="fw-lighter text py-4"><?= $art['description_courte']; ?></p>
+
                         <h6 class="fs-5 text-primary fw-bold py-1 m-2"><?= $art['prix']; ?> $</h6>
                         <form action="<?= base_url('ajouter_au_panier'); ?>" method="post">
                             <input type="hidden" name="id_produit" value="<?= $art['id_produit']; ?>">
@@ -196,93 +200,94 @@
         </div>
     </section>
 
-    
+
     <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        let imageZoom = document.querySelector('#imageZoom');
-        if (imageZoom) {
-            let img = imageZoom.querySelector('img');
-            let updateZoom = (event) => {
-                let rect = img.getBoundingClientRect();
-                let offsetX = event.clientX - rect.left;
-                let offsetY = event.clientY - rect.top;
-                let percentX = (offsetX / rect.width) * 100;
-                let percentY = (offsetY / rect.height) * 100;
-                imageZoom.style.setProperty('--zoom-x', percentX + '%');
-                imageZoom.style.setProperty('--zoom-y', percentY + '%');
-                imageZoom.style.setProperty('--display', 'block');
-            };
-            imageZoom.addEventListener('mousemove', updateZoom);
-            imageZoom.addEventListener('mouseleave', () => {
-                imageZoom.style.setProperty('--display', 'none');
-            });
-        }
-    });
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    let updatePanierQuantite = () => {
-        if (<?= session()->has('user_id') ? 'true' : 'false' ?>) {
-            fetch('<?= base_url('compter_articles_panier') ?>')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('panier-quantite').textContent = data.quantite_totale;
-                });
-        } else {
-            // Utilisateur non connecté, affichez 0 dans la quantité de panier
-            document.getElementById('panier-quantite').textContent = '0';
-        }
-    };
-
-    // Appel initial pour afficher la quantité de panier au chargement de la page
-    updatePanierQuantite();
-
-    document.querySelectorAll('form[action*="ajouter_au_panier"]').forEach(form => {
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            if (!<?= session()->has('user_id') ? 'true' : 'false' ?>) {
-                // Redirection vers la vue de connexion si l'utilisateur n'est pas connecté
-                window.location.href = '<?= base_url('Users') ?>';
-            } else {
-                let formData = new FormData(this);
-
-                fetch(this.action, {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        document.getElementById('panier-quantite').textContent = data.quantite_totale;
-                    } else {
-                        alert(data.message);
-                    }
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let imageZoom = document.querySelector('#imageZoom');
+            if (imageZoom) {
+                let img = imageZoom.querySelector('img');
+                let updateZoom = (event) => {
+                    let rect = img.getBoundingClientRect();
+                    let offsetX = event.clientX - rect.left;
+                    let offsetY = event.clientY - rect.top;
+                    let percentX = (offsetX / rect.width) * 100;
+                    let percentY = (offsetY / rect.height) * 100;
+                    imageZoom.style.setProperty('--zoom-x', percentX + '%');
+                    imageZoom.style.setProperty('--zoom-y', percentY + '%');
+                    imageZoom.style.setProperty('--display', 'block');
+                };
+                imageZoom.addEventListener('mousemove', updateZoom);
+                imageZoom.addEventListener('mouseleave', () => {
+                    imageZoom.style.setProperty('--display', 'none');
                 });
             }
         });
-    });
-});
-</script>
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let updatePanierQuantite = () => {
+                if (<?= session()->has('user_id') ? 'true' : 'false' ?>) {
+                    fetch('<?= base_url('compter_articles_panier') ?>')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('panier-quantite').textContent = data.quantite_totale;
+                        });
+                } else {
+                    // Utilisateur non connecté, affichez 0 dans la quantité de panier
+                    document.getElementById('panier-quantite').textContent = '0';
+                }
+            };
+
+            // Appel initial pour afficher la quantité de panier au chargement de la page
+            updatePanierQuantite();
+
+            document.querySelectorAll('form[action*="ajouter_au_panier"]').forEach(form => {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    if (!<?= session()->has('user_id') ? 'true' : 'false' ?>) {
+                        // Redirection vers la vue de connexion si l'utilisateur n'est pas connecté
+                        window.location.href = '<?= base_url('Users') ?>';
+                    } else {
+                        let formData = new FormData(this);
+
+                        fetch(this.action, {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.status === 'success') {
+                                    document.getElementById('panier-quantite').textContent = data.quantite_totale;
+                                } else {
+                                    alert(data.message);
+                                }
+                            });
+                    }
+                });
+            });
+        });
+    </script>
 
 
 
 
-<script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
-    <footer style="background-color: #1C274C;" class="footer text-center">
-        2024 © Hidden Dark Lab Tous droit réservé <br>
-        <p class="text-start">Pour plus de question,
-            <a href=""><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-        </p>
-        <a class="navbar-brand text-white py-2 d-flex" href="index.php">Philia <span class="bg-danger bg-gradient  rounded-3 text-light">Shop</span></a>
-        <p class=" mr-2 py-3 d-flex text-secondaty">
-            <img src="<?= base_url("assets/images/assistant-svgrepo-com.svg") ?>" alt="footer-contact_logo" style="width: 50px;">
-            <strong class="text-secondary mr-2">BESOIN D'ASSISTANCE ? </strong> NOUS SOMMES DISPONIBLE DE 8h - 17h
-            <hr>
-            <span style="cursor: pointer;" class="fw-bold text-white">+243 890 000 000</span>
-            <span style="cursor: pointer;" class="fw-bold text-light">+243 977 061 220</span>
-        </p>
+    <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
+    <footer style="background-color: #232f3e" class="footer text-center">
+        2024 © Hidden Dark Lab Tous droits réservés <br>
+
+        <div class="d-flex justify-content-center">
+            <i class="fab fa-facebook text-primary  fs-3 m-2"></i>
+            <i class="fab fa-instagram fs-3 m-2" style="color:#963ec3"></i>
+            <i class="fab fa-twitter text-white fs-3 m-2"></i>
+            <i class="fab fa-whatsapp fs-3 m-2" style="color:#00bd07"></i>
+
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <span style="cursor: pointer;" class="fw-bold text-white text-center">+243 890 000 000</span>
+            <span style="cursor: pointer;" class="fw-bold text-white text-center">+243 977 061 220</span>
+        </div>
     </footer>
 </body>
 
