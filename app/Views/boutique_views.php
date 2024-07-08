@@ -34,34 +34,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Styles pour l'effet de zoom */
-        #imageZoom {
-            width: 100%;
-            height: 400px;
-            /* Ajustez en fonction de vos besoins */
-            position: relative;
-        }
-
-        #imageZoom img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 0 0;
-        }
-
-        #imageZoom::after {
-            display: var(--display);
-            content: '';
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            background-image: var(--url);
-            background-size: 200%;
-            background-position: var(--zoom-x) var(--zoom-y);
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
+       
     </style>
 </head>
 
@@ -164,7 +137,7 @@
                 $imgData = base64_encode($similar['img']);
                 $src = 'data:image/jpeg;base64,' . $imgData;
                 ?>
-                <div class="card mycard border-2 bg-white rounded card-hover-effect flex flex-col w-full overflow-hidden mt-2">
+                <div class="card mycard border-2  rounded card-hover-effect flex flex-col w-full overflow-hidden mt-2">
                     <div class="flex justify-center items-center w-full h-64">
                         <img src="<?= $src; ?>" alt="Image du produit" class="max-w-full max-h-full object-contain" style="max-width: 80%;">
                     </div>
@@ -181,29 +154,7 @@
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            let imageZoom = document.querySelector('#imageZoom');
-            if (imageZoom) {
-                let img = imageZoom.querySelector('img');
-                let updateZoom = (event) => {
-                    let rect = img.getBoundingClientRect();
-                    let offsetX = event.clientX - rect.left;
-                    let offsetY = event.clientY - rect.top;
-                    let percentX = (offsetX / rect.width) * 100;
-                    let percentY = (offsetY / rect.height) * 100;
-                    imageZoom.style.setProperty('--zoom-x', percentX + '%');
-                    imageZoom.style.setProperty('--zoom-y', percentY + '%');
-                    imageZoom.style.setProperty('--display', 'block');
-                };
-                imageZoom.addEventListener('mousemove', updateZoom);
-                imageZoom.addEventListener('mouseleave', () => {
-                    imageZoom.style.setProperty('--display', 'none');
-                });
-            }
-        });
-    </script>
-
+  
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let updatePanierQuantite = () => {
