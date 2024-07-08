@@ -8,7 +8,7 @@ class Users extends BaseController
 {
     public function users()
     {
-        return view('users_view');
+        return view('users_view1');
     }
 
     public function user_create()
